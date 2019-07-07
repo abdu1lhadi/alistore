@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+<div class="row">
+    {% for post in posts %}
+    <div class="border mb-3 col-md-5 ml-4">
+        <img class="img-responsive img-fluid" src="{{post.image_project.url}}" 
+        alt="صورة الناشر">
+        <h3><a class="text-dark" href="{% url 'detail' post.id %}">{{post.title}}</a></h3>
+        <p>{{post.content}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% include 'blog/pagination.html' with page=posts %}
+
+{% endblock content %}
