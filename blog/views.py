@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Comment
+from .models import Post, Comment, Top5
 from .forms import NewComment, PostCreateForm
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views.generic import CreateView, UpdateView, DeleteView
@@ -50,6 +50,16 @@ def post_detail(request, post_id):
     }
     
     return render(request, 'blog/detail.html', context)
+
+def top_detail(request, top_id):
+    tops = get_object_or_404(Top5, pk=top_id)
+
+    context = {
+        'title': tops,
+        'tops': tops,   
+    }
+
+    return render(request, 'blog/top_detail.html', context)
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post

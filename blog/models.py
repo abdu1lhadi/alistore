@@ -34,3 +34,16 @@ class Comment(models.Model):
     
     class Meta:
         ordering = ('-comment_date', )
+
+class Top5(models.Model):
+    image_top = models.ImageField(default='default.jpg', upload_to='top_5')
+    title = models.CharField(max_length=100)
+    old_prais = models.CharField(max_length=100)
+    new_prais = models.CharField(max_length=100)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse('topdetail', args=[self.pk])

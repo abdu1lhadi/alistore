@@ -1,5 +1,5 @@
 from django import template
-from blog.models import Post, Comment
+from blog.models import Post, Comment, Top5
 
 register = template.Library()
 @register.inclusion_tag('blog/latest_posts.html')
@@ -12,6 +12,6 @@ def latest_posts():
 @register.inclusion_tag('blog/latest_comments.html')
 def latest_comments():
     context = {
-        'l_comments': Comment.objects.filter(active=True)[:5]
+        'l_Top5': Top5.objects.all()[0:5]
     }
     return context

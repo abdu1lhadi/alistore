@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="border p-3 mb-3 text-center">
+    <img class="img-responsive img-fluid" src="{{tops.image_top.url}}" 
+    alt="صورة الناشر">
+    
+    <h3>{{tops.title}}</h3>
+    <p>{{tops.content}}</p>
+</div>
+
+{% endblock content %}
