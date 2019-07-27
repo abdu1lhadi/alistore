@@ -13,7 +13,14 @@
         <img class="img-responsive img-fluid" src="{{post.image_project.url}}" 
         alt="صورة الناشر">
         <h3><a class="text-dark" href="{% url 'detail' post.id %}">{{post.title}}</a></h3>
-        <p>{{post.content}}</p>
+        <p>
+            {% if post.content|length > 40 %}
+            {{post.content|slice:'45'}} ..
+            {% else %}
+            {{post.content}}
+            {% endif %}
+            
+        </p>
     </div>
     {% endfor %}
 </div>
