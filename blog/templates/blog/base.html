@@ -22,7 +22,7 @@
             <a class="navbar-brand" href="#"><img src="{% static 'blog/images/mim-logo.png' %}" alt="شعار مدونة"
                 width="30px" >
                 متجر علي</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -46,7 +46,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">من نحن</a>
                     </li>
+                    
                 </ul>
+                <form method="GET" action="." class="form-inline">
+                    <input class="form-control mr-sm-2" name="search_contains" type="search" value="{{ request.GET.search_contains }}" placeholder="ابحث هنا" aria-label="Search">
+                    <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">بحث</button>
+                </form>
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav mr-auto">
                     <!-- <li class="nav-item"><a class="nav-link" href="{% url 'new_post' %}">انشاء تدوينة</a></li> -->
