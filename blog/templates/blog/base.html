@@ -18,7 +18,7 @@
 <body>
     <header>
         <!--Start NavBar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#"><img src="{% static 'blog/images/mim-logo.png' %}" alt="شعار مدونة"
                 width="30px" >
                 متجر علي</a>
@@ -36,7 +36,7 @@
                         المنتجات
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">كيابل</a>
+                        <a class="dropdown-item " href="#">كيابل</a>
                         <a class="dropdown-item" href="#">شواحن متنقله</a>
                         <a class="dropdown-item" href="#">سماعات</a>
                         <div class="dropdown-divider"></div>
@@ -50,7 +50,7 @@
                 </ul>
                 <form method="GET" action="." class="form-inline">
                     <input class="form-control mr-sm-2" name="search_contains" type="search" value="{{ request.GET.search_contains }}" placeholder="ابحث هنا" aria-label="Search">
-                    <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">بحث</button>
+                    <button class="btn btn-outline-dark  my-2 my-sm-0" type="submit">بحث</button>
                 </form>
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav mr-auto">
@@ -82,26 +82,32 @@
 
                     {% endblock content %}
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <div class="card mb-3 p-0">
                         <h3 class="text-center bg-secondary text-light p-2 mb-0">
                             أحدث المنتجات
                         </h3>
-                        {% latest_posts %}
+                        <div class="border brdss">
+                            {% latest_posts %}
+                        </div>
+                        
 
                     </div>
                     <div class="card mb-3">
-                        <h3 class="text-center bg-secondary text-light p-2">
+                        <h3 class="text-center bg-secondary text-light p-2 mb-0">
                             المنتجات المميزة
                         </h3>
-                        {% latest_comments %}
+                        <div class="border brdss">
+                            {% latest_comments %}
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-secondary">
+    <footer class="bg-light">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md">

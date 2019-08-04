@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="border p-3 mb-3 text-center">
+<div class="border brdss p-3 mb-3 text-center">
     <img class="img-responsive img-fluid" src="{{post.image_project.url}}" 
     alt="صورة الناشر">
     
@@ -28,11 +28,11 @@
 {% endfor %}
 
 <h3 class="border-bottom pb-3 mb-3 mt-5">اضافة تعلق جديد</h3>
-<div class="border p-4 mb-5 mt-3">
+<div class="border brdss p-4 mb-5 mt-3">
     <form method="POST">
         {% csrf_token %} <!-- for security your form -->
         {{comment_form|crispy}}
-        <input class="btn btn-secondary" type="submit" value="نشر التعليق">
+        <input class="btn btn-primary" type="submit" value="نشر التعليق">
     </form>
 </div>
 {% endblock content %}

@@ -1,15 +1,15 @@
 <div class="pt-3 mt-4 mb-5 text-center">
     {% if page.has_next %}
-    <a class="btn btn-secondary bh-secondary" href="?page={{page.next_page_number}}{% if request.GET.search_contains %}
+    <a class="btn btn-primary bh-secondary" href="?page={{page.next_page_number}}{% if request.GET.search_contains %}
     &search_contains={{ request.GET.search_contains }}{% endif %}">التالي</a>
     {% else %}
-    <a class="btn btn-secondary bh-secondary disabled" href="#">التالي</a>
+    <a class="btn btn-primary bh-secondary disabled" href="#">التالي</a>
     {% endif %}
     <span class="pr-4 pl-4">صفحة {{page.number}} من {{page.paginator.num_pages}}</span>
     {% if page.has_previous %}
-    <a class="btn btn-secondary bh-secondary" href="?page={{page.previous_page_number}}{% if request.GET.search_contains %}
+    <a class="btn btn-primary bh-secondary" href="?page={{page.previous_page_number}}{% if request.GET.search_contains %}
     &search_contains={{ request.GET.search_contains }}{% endif %}">السابق</a>
     {% else %}
-    <a class="btn btn-secondary bh-secondary disabled" href="#">السابق</a>
+    <a class="btn btn-primary bh-secondary disabled" href="#">السابق</a>
     {% endif %}
 </div>

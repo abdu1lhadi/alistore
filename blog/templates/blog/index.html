@@ -9,7 +9,7 @@
 {% endif %}
 <div class="row">
     {% for post in posts %}
-    <div class="border mb-3 col-md-5 ml-4">
+    <div class="border mb-3 col-md-5 ml-4 brdss">
         <img class="img-responsive img-fluid" src="{{post.image_project.url}}" 
         alt="صورة الناشر">
         <h3><a class="text-dark" href="{% url 'detail' post.id %}">{{post.title}}</a></h3>

@@ -18,11 +18,20 @@ body{
 }
 
 .bg-secondary{
-    background-color: #666 !important;
+    background-color: rgb(28, 182, 253) !important;
 }
 
 .bg-light{
-    background-color: #ccc !important;
+    background-color: rgb(34, 128, 250) !important;
+}
+
+
+.nave{
+    color: #fff !important;
+}
+
+.brdss{
+    border-color:rgb(28, 182, 253) !important;
 }
 
 /* Start Sidebar */
