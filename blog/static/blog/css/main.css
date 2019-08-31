@@ -34,6 +34,18 @@ body{
     border-color:rgb(28, 182, 253) !important;
 }
 
+/* start aptitil */
+
+.adtitil{
+    background-image: linear-gradient(to right,rgb(0, 238, 255) , rgb(0, 153, 255) );
+    height: 130px;
+    color: #fff;
+    font-family: unset;
+    
+}
+
+/* end aptitil */
+
 /* Start Sidebar */
 .latest-post, .latest-comment{
     padding: 0 15px;

@@ -57,3 +57,4 @@ class Top5(models.Model):
     
     def get_absolute_url(self):
         return reverse('topdetail', args=[self.pk])
+
