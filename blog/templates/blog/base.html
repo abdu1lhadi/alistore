@@ -18,16 +18,16 @@
 <body>
     <header>
         <!--Start NavBar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#"><img src="{% static 'blog/images/logonew.png' %}" alt="شعار مدونة"
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary row">
+            <a class="navbar-brand col-md-2" href="{% url 'home' %}"><img src="{% static 'blog/images/logonew.png' %}" alt="شعار مدونة"
                 width="30px" >
                 متجر علي</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse col-md-10 row" id="navbarSupportedContent">
+                <ul class="navbar-nav col-md-4">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">الرئيسية <span class="sr-only">(current)</span></a>
                     </li>
@@ -48,18 +48,18 @@
                     </li>
                     
                 </ul>
-                <form method="GET" action="." class="form-inline">
-                    <input class="form-control mr-sm-2" name="search_contains" type="search" value="{{ request.GET.search_contains }}" placeholder="ابحث هنا" aria-label="Search">
-                    <button class="btn btn-outline-dark  my-2 my-sm-0" type="submit">بحث</button>
+                <form method="GET" action="." class="form-inline col-md-5 row">
+                    <input class="form-control col-md-10" name="search_contains" type="search" value="{{ request.GET.search_contains }}" placeholder="ابحث هنا" aria-label="Search">
+                    <button class="btn btn-outline-dark col-md-2" type="submit">بحث</button>
                 </form>
                 {% if user.is_authenticated %}
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto col-md-3">
                     <!-- <li class="nav-item"><a class="nav-link" href="{% url 'new_post' %}">انشاء تدوينة</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">الملف الشخصي</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">تسجيل الخروج</a></li>
                 </ul>
                 {% else %}
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto col-md-3">
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">تسجيل الدخول</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">تسجيل</a></li>
                 </ul>
